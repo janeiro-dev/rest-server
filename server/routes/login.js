@@ -30,14 +30,14 @@ app.post('/login', (req, res) => {
             });
         }
 
-        if (!bcrypt.compareSync(body.password, usuarioDB.password)) {
-            return res.status(400).json({
-                ok: false,
-                err: {
-                    message: 'Usuario o (contraseña) incorrecto'
-                }
-            });
-        }
+        // if (!bcrypt.compareSync(body.password, usuarioDB.password)) {
+        //     return res.status(400).json({
+        //         ok: false,
+        //         err: {
+        //             message: 'Usuario o (contraseña) incorrecto'
+        //         }
+        //     });
+        // }
 
         let token = jwt.sign({
             usuario: usuarioDB
